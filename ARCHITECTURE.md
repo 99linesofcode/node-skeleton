@@ -2,12 +2,11 @@
 
 The architecture document for this repository, following the
 [architecture.md](https://architecture.md) schema — built so an agent (or a
-new colleague) can comprehend the codebase from this file alone, and so the
-architectural principles in the `software-architecture` and
-`software-development` skills are visible in how this repo actually works.
-This file is the **canonical statement** of the Node/TypeScript conventions
-the `.github-js` starter and every generated package inherit. Fill every
-section; update it in the same change that alters the architecture it
+new colleague) can comprehend the codebase from this file alone, and so this
+repository's own architectural principles are visible in how it actually
+works. This file is the **canonical statement** of the Node/TypeScript
+conventions the `.github-js` starter and every generated package inherit. Fill
+every section; update it in the same change that alters the architecture it
 describes.
 
 ## 1. Project Structure
@@ -206,9 +205,9 @@ Date of Last Update: 2026-10-06
 
 ## 12. Conventions & Boundaries
 
-The house standards this repository adheres to — the full contract lives in
-the `software-architecture` skill; this section records what is enforced
-**here**, and by which gate. Enforced by `eslint-plugin-boundaries`
+The house standards this repository adheres to — stated here in full; this
+section records what is enforced **here**, and by which gate. Enforced by
+`eslint-plugin-boundaries`
 (elements = the module folders), so the gate runs inside the existing
 `eslint .` step:
 
