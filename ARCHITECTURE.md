@@ -19,7 +19,7 @@ above the modules. Tests mirror the tree. A generated package starts almost
 empty; the shape below is what it grows into.
 
 ```
-[Project Root]/
+my-package/
 ├── src/
 │   ├── <module>/         # one folder per bounded concept, lowercase
 │   ├── shared/           # the kernel: canonical DTOs, pure helpers — imports from no module
