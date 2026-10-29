@@ -79,12 +79,12 @@ Key technologies: TypeScript (ESM, NodeNext), vitest, eslint with
 `eslint-plugin-boundaries`, prettier. Deployment target: a compiled npm
 package (`build/`).
 
-| Component | Responsibility |
-|---|---|
-| `src/index.mts` | The public surface: re-exports modules; the composition root when the package wires providers |
+| Component       | Responsibility                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------ |
+| `src/index.mts` | The public surface: re-exports modules; the composition root when the package wires providers          |
 | `src/<module>/` | One bounded concept: actions (use cases), adapters (boundary), mappers (raw ⇄ canonical), pure helpers |
-| `src/shared/` | The kernel: canonical DTOs and pure helpers; imports from no module |
-| `devshell/` | The pinned dev environment (`devshell-node`) |
+| `src/shared/`   | The kernel: canonical DTOs and pure helpers; imports from no module                                    |
+| `devshell/`     | The pinned dev environment (`devshell-node`)                                                           |
 
 ### Ports & adapters
 

@@ -38,7 +38,9 @@ export default tseslint.config(
             // The public surface re-exports modules and may use the kernel.
             {
               from: { element: { type: 'entry' } },
-              allow: { to: { element: { types: { anyOf: ['module', 'shared'] } } } },
+              allow: {
+                to: { element: { types: { anyOf: ['module', 'shared'] } } },
+              },
             },
             // Modules consume the kernel; never the entry, never each other
             // (extend this allow-list when a real cross-module edge appears).
@@ -48,7 +50,9 @@ export default tseslint.config(
             },
             {
               from: { element: { type: 'shared' } },
-              disallow: { to: { element: { types: { anyOf: ['module', 'entry'] } } } },
+              disallow: {
+                to: { element: { types: { anyOf: ['module', 'entry'] } } },
+              },
               message: 'The shared kernel imports from no module.',
             },
           ],
