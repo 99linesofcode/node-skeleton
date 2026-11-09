@@ -8,14 +8,16 @@ eslint with prettier.
 
 ## How to use
 
-1. `git init`
-2. `git remote add origin <REPOSITORY>`
-3. `git remote add skeleton git@github.com:99linesofcode/node-skeleton.git`
-4. `git fetch skeleton`
-5. `git rebase skeleton/main`
+Run `/instantiate` from an empty directory to do all of this for you. By hand:
 
-Updates flow the same way: `git fetch skeleton && git rebase skeleton/main`.
-Conflicts on rebase are the divergence points — resolve them by keeping your
+1. `git init`
+2. `git remote add node-skeleton git@github.com:99linesofcode/node-skeleton.git`
+3. `git fetch node-skeleton`
+4. `git merge --allow-unrelated-histories node-skeleton/main`
+
+Updates flow the same way: `git fetch node-skeleton && git merge node-skeleton/main`.
+Merge, never rebase or squash (git-skeleton's ADR 0001).
+Merge conflicts are the divergence points: resolve them by keeping your
 repo's override where it differs from the shared default.
 
 ## Commands

@@ -114,10 +114,13 @@ it sits behind**.
   to `build/`; `package.json` publishes `files: ["build"]` with
   `main: build/index.mjs`.
 - **Consumption**: `node-skeleton` itself is a starter, not a deployed
-  service. A generated repo consumes it via a secondary remote:
-  `git remote add skeleton git@github.com:99linesofcode/node-skeleton.git`,
-  then `git fetch skeleton && git rebase skeleton/main`. Updates flow the
-  same way; rebase conflicts are the divergence points, resolved by keeping
+  service. `/instantiate` creates a repo from it; by hand, add a remote
+  named after it
+  (`git remote add node-skeleton git@github.com:99linesofcode/node-skeleton.git`),
+  `git fetch node-skeleton`, then
+  `git merge --allow-unrelated-histories node-skeleton/main`. Updates are a
+  plain `git merge node-skeleton/main`, never a rebase (git-skeleton's
+  ADR 0001); merge conflicts are the divergence points, resolved by keeping
   the consuming repo's override.
 - **CI/CD**: Dependabot only (`.github/dependabot.yaml`), grouped into
   automated patch/minor and manual major updates. There is no test or
@@ -187,8 +190,8 @@ Date of Last Update: 2026-10-06
 
 ## 11. Glossary / Acronyms
 
-- **Skeleton** — a starter repository consumed via a secondary git remote and
-  rebase; the consuming repo owns its own history.
+- **Skeleton** — a starter repository whose history a consumer merges; see
+  git-skeleton's `GLOSSARY.md`.
 - **Consumer / generated package** — a repo created from this skeleton.
 - **Module** — one bounded concept, one lowercase folder under `src/`.
 - **Shared kernel** — `src/shared/`; the neutral ground that imports from no
