@@ -20,6 +20,14 @@ Merge, never rebase or squash (git-skeleton's ADR 0001).
 Merge conflicts are the divergence points: resolve them by keeping your
 repo's override where it differs from the shared default.
 
+## Development environment
+
+With direnv and the Nix package manager, `git submodule update --init --recursive`
+then `direnv allow` loads the `devshell` submodule
+([devshell-node](https://github.com/99linesofcode/devshell-node)), which
+provides Node.js 22, pnpm, TypeScript, eslint and prettier. Then run
+`pnpm install`.
+
 ## Commands
 
 ```bash
