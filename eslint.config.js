@@ -62,7 +62,7 @@ export default tseslint.config(
     plugins: { boundaries },
     settings: {
       'boundaries/elements': [
-        { type: 'composition-root', pattern: 'src/index.mts', mode: 'full' },
+        { type: 'composition-root', pattern: 'src/index.ts', mode: 'full' },
         // The shared kernel comes before the contexts, which `*` would match.
         {
           type: 'shared-kernel',
@@ -211,7 +211,7 @@ export default tseslint.config(
                 ],
               },
               message:
-                'public-interface: code outside the module may import only src/index.mts, Core/*/Application/** and Core/*/Domain/Events/**, not {{dependency.source}}{{#if to.element.types}} ({{to.element.types}}){{/if}}.',
+                'public-interface: code outside the module may import only src/index.ts, Core/*/Application/** and Core/*/Domain/Events/**, not {{dependency.source}}{{#if to.element.types}} ({{to.element.types}}){{/if}}.',
             },
           ],
         },

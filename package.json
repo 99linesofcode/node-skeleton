@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "build/index.mjs",
+  "main": "build/index.js",
   "files": [
     "build"
   ],
